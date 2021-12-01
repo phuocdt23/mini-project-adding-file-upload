@@ -17,8 +17,10 @@
       <ul>
         <li class="user-item">
           <article>
-            <img src="" alt="The image of the user.">
-            <h2>User name</h2>
+            <% for(const user of users){ %> 
+            <img src="../images/1638339754159-50521794_2293164177591636_1628190443709661184_o.jpg" alt="The image of the user.">
+            <h2><%= user.name %> </h2>
+            <% } %> 
           </article>
         </li>
       </ul>
