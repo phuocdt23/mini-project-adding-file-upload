@@ -27,6 +27,13 @@ router.post('/profiles', upload.single('image'), async function (req, res) {
   const userData = req.body;
   console.log(uploadedImage);
   console.log(userData);
+  await db
+    .getDb()
+    .collection('users')
+    .insertOne({
+      name: userData.username,
+      imagePath: uploadedImage.path,
+    });
   res.redirect('/');
 })
 
